@@ -123,68 +123,67 @@ function lurus(plx, ply, gambarr, potx, poty, r) {
 }
 
 function ambil_data() {
-    var plx = 79; //document.getElementById('planox').value;
-    var ply = 109; //document.getElementById('planoy').value;
-    var potx = 8; //document.getElementById('nilaix').value;
-    var poty = 22; //document.getElementById('nilaiy').value;
+    var plx = document.getElementById('planox').value;
+    var ply = document.getElementById('planoy').value;
+    var potx = document.getElementById('nilaix').value;
+    var poty = document.getElementById('nilaiy').value;
     var kumpul = [plx, ply, potx, poty];
+    var kumpull = kumpul.map(Number);
     if (parseFloat(plx) && parseFloat(ply) && parseFloat(potx) && parseFloat(poty)) {
         // alert('your input is ' + kumpul);
-        return kumpul;
+        return kumpull;
     }
     alert('your input is blank or strings ' + kumpul);
-    //return [0, 0, 0, 0];
+    return false;
 }
 
 function sum() {
     var ambil = new ambil_data();
+
     console.log(ambil);
-    let c = document.getElementById("myCanvas");
-    let d = document.getElementById("myCanvas2");
-    let e = document.getElementById("myCanvas3");
-    let f = document.getElementById("myCanvas4");
-    let gambarr = new gambar(ambil[0], ambil[1], c);
-    let gambarr2 = new gambar(ambil[0], ambil[1], d);
-    let gambarr3 = new gambar(ambil[0], ambil[1], e);
-    let gambarr4 = new gambar(ambil[0], ambil[1], f);
-    let r_l = lurus(ambil[0], ambil[1], gambarr3, ambil[2], ambil[3], true);
-    let r_r = lurus(ambil[0], ambil[1], gambarr4, ambil[3], ambil[2], true);
-    let luruss = lurus(ambil[0], ambil[1], gambarr, ambil[2], ambil[3], false);
-    let putar = lurus(ambil[0], ambil[1], gambarr2, ambil[3], ambil[2], false);
+    if (ambil !== false) {
 
+        let c = document.getElementById("myCanvas");
+        let d = document.getElementById("myCanvas2");
+        let e = document.getElementById("myCanvas3");
+        let f = document.getElementById("myCanvas4");
+        let gambarr = new gambar(ambil[0], ambil[1], c);
+        let gambarr2 = new gambar(ambil[0], ambil[1], d);
+        let gambarr3 = new gambar(ambil[0], ambil[1], e);
+        let gambarr4 = new gambar(ambil[0], ambil[1], f);
+        let r_l = lurus(ambil[0], ambil[1], gambarr3, ambil[2], ambil[3], true);
+        let r_r = lurus(ambil[0], ambil[1], gambarr4, ambil[3], ambil[2], true);
+        let luruss = lurus(ambil[0], ambil[1], gambarr, ambil[2], ambil[3], false);
+        let putar = lurus(ambil[0], ambil[1], gambarr2, ambil[3], ambil[2], false);
 
-    /*console.log(luruss[0].data1[0]);
-    console.log('jumlah data1 = ' + luruss[0].data1[4] + ' x ' + luruss[0].data1[5]);
-    console.log(luruss[0].data2[0]);
-    console.log(luruss[0].data3[0]);*/
+        var total_lurus = luruss[0].data1[0] + luruss[0].data2[0] + luruss[0].data3[0];
+        var total_putar = putar[0].data1[0] + putar[0].data2[0] + putar[0].data3[0];
+        var total_rl = r_l[0].data1[0] + r_l[0].data2[0] + r_l[0].data3[0];
+        var total_rr = r_r[0].data1[0] + r_r[0].data2[0] + r_r[0].data3[0];
 
-    var total_lurus = luruss[0].data1[0] + luruss[0].data2[0] + luruss[0].data3[0];
-    var total_putar = putar[0].data1[0] + putar[0].data2[0] + putar[0].data3[0];
-    var total_rl = r_l[0].data1[0] + r_l[0].data2[0] + r_l[0].data3[0];
-    var total_rr = r_r[0].data1[0] + r_r[0].data2[0] + r_r[0].data3[0];
-
-    if (total_lurus >= total_putar && total_lurus >= total_rl && total_lurus >= total_rr) {
-        c.removeAttribute("hidden");
-        d.setAttribute("hidden", "hidden");
-        e.setAttribute("hidden", "hidden");
-        f.setAttribute("hidden", "hidden");
-    } else if (total_putar >= total_lurus && total_putar >= total_rl && total_putar >= total_rr) {
-        c.setAttribute("hidden", "hidden");
-        d.removeAttribute("hidden");
-        e.setAttribute("hidden", "hidden");
-        f.setAttribute("hidden", "hidden");
-    } else if (total_rl >= total_lurus && total_rl >= total_putar && total_rl >= total_rr) {
-        c.setAttribute("hidden", "hidden");
-        d.setAttribute("hidden", "hidden");
-        e.removeAttribute("hidden");
-        f.setAttribute("hidden", "hidden");
-    } else if (total_rr >= total_lurus && total_rr >= total_putar && total_rr >= total_rl) {
-        c.setAttribute("hidden", "hidden");
-        d.setAttribute("hidden", "hidden");
-        e.setAttribute("hidden", "hidden");
-        f.removeAttribute("hidden");
+        if (total_lurus >= total_putar && total_lurus >= total_rl && total_lurus >= total_rr) {
+            c.removeAttribute("hidden");
+            d.setAttribute("hidden", "hidden");
+            e.setAttribute("hidden", "hidden");
+            f.setAttribute("hidden", "hidden");
+        } else if (total_putar >= total_lurus && total_putar >= total_rl && total_putar >= total_rr) {
+            c.setAttribute("hidden", "hidden");
+            d.removeAttribute("hidden");
+            e.setAttribute("hidden", "hidden");
+            f.setAttribute("hidden", "hidden");
+        } else if (total_rl >= total_lurus && total_rl >= total_putar && total_rl >= total_rr) {
+            c.setAttribute("hidden", "hidden");
+            d.setAttribute("hidden", "hidden");
+            e.removeAttribute("hidden");
+            f.setAttribute("hidden", "hidden");
+        } else if (total_rr >= total_lurus && total_rr >= total_putar && total_rr >= total_rl) {
+            c.setAttribute("hidden", "hidden");
+            d.setAttribute("hidden", "hidden");
+            e.setAttribute("hidden", "hidden");
+            f.removeAttribute("hidden");
+        }
+        console.log('+++++ bug ++++++ ' + total_lurus + '  < > ' + total_putar + ' <> ' + total_rl + ' <> ' + total_rr);
     }
-    console.log('+++++ bug ++++++ ' + total_lurus + '  < > ' + total_putar + ' <> ' + total_rl + ' <> ' + total_rr);
 }
 
 function jikaenter(myfild) {

@@ -49,22 +49,22 @@
             </div>
         </div>
         <div class="container-fluid">
-            <canvas id="myCanvas" style="border:1px solid #d3d3d3;">
+            <canvas id="myCanvas" hidden style="border:1px solid #d3d3d3;">
                 Your browser does not support the canvas element.
             </canvas>
         </div>
         <div class="container-fluid">
-            <canvas id="myCanvas2" style="border:1px solid #d3d3d3;">
+            <canvas id="myCanvas2" hidden style="border:1px solid #d3d3d3;">
                 Your browser does not support the canvas element.
             </canvas>
         </div>
         <div class="container-fluid">
-            <canvas id="myCanvas3" style="border:1px solid #d3d3d3;">
+            <canvas id="myCanvas3" hidden style="border:1px solid #d3d3d3;">
                 Your browser does not support the canvas element.
             </canvas>
         </div>
         <div class="container-fluid">
-            <canvas id="myCanvas4" style="border:1px solid #d3d3d3;">
+            <canvas id="myCanvas4" hidden style="border:1px solid #d3d3d3;">
                 Your browser does not support the canvas element.
             </canvas>
         </div>
