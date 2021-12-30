@@ -3,35 +3,70 @@
 You can use the [editor on GitHub](https://github.com/sakatimuna7/PotongKertas/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<body>
+    <div class="container">
+        <h1 align="center">belajar berhitung plano percetakan</h1>
+        <h3>Membuat Perhitungan Plano </h3>
+        <div class="row">
+            <div class="col-sm">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Ukuran plano</th>
+                            <td><input type="text" id="planox" onkeypress="jikaenter(this,event)" /></td>
+                            <td>x</td>
+                            <td><input type="text" id="planoy" onkeypress="jikaenter(this,event)" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Ukuran Potong </th>
+                            <td><input type="text" id="nilaix" onkeypress="jikaenter(this,event)" /></td>
+                            <td>x</td>
+                            <td><input type="text" id="nilaiy" onkeypress="jikaenter(this,event)" /></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <table class="table table-striped">
 
-### Markdown
+                    <td>
+                        <input type="text" readonly="readonly" id="hasil"> <button type="button" class="btn btn-primary" onclick="sum();">Hasil</button>
+                        <button type="button" class="btn btn-secondary" onclick="bersih();">Besih</button>
+                    </td>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+                </table>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <canvas id="myCanvas" hidden style="border:1px solid #d3d3d3;">
+                Your browser does not support the canvas element.
+            </canvas>
+        </div>
+        <div class="container-fluid">
+            <canvas id="myCanvas2" hidden style="border:1px solid #d3d3d3;">
+                Your browser does not support the canvas element.
+            </canvas>
+        </div>
+        <div class="container-fluid">
+            <canvas id="myCanvas3" hidden style="border:1px solid #d3d3d3;">
+                Your browser does not support the canvas element.
+            </canvas>
+        </div>
+        <div class="container-fluid">
+            <canvas id="myCanvas4" hidden style="border:1px solid #d3d3d3;">
+                Your browser does not support the canvas element.
+            </canvas>
+        </div>
+        <!-- <script src="hitungan.js"></script> -->
+        <script src="rumus.js">
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sakatimuna7/PotongKertas/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+        </script>
+</body>
