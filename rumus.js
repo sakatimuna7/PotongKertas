@@ -9,9 +9,6 @@ class gambar {
         this.canvas.height = plano_y * 3;
         this.ctx.fillStyle = "#ffd500";
         this.ctx.fillRect(0, 0, plano_x * 3, plano_y * 3);
-        //this.ctx.beginPath();
-        //this.potongx = potong_x;
-        //this.potongy = potong_y;
     }
 
     potongg(warna, corx, cory, sizex, sizey) {
@@ -19,9 +16,6 @@ class gambar {
         this.ctx.fillRect(corx * 3, cory * 3, sizex * 3, sizey * 3);
         this.ctx.strokeStyle = warna;
         this.ctx.strokeRect(corx * 3, cory * 3, sizex * 3, sizey * 3);
-        //console.log('gambar.plano #suskes jalan');
-
-        //return ini;
     }
 
     hitung(potongx, potongy, plx, ply, cor_x, cor_y, color, nn, berulang, r) {
@@ -41,6 +35,8 @@ class gambar {
                 this.potongg(color, cor_x, cor_y, potongx, potongy);
                 if (nn == 1) {
                     cor_y += tmp_hasily;
+                } else if (nn == 3) {
+                    cor_y = cor_yy + tmp_hasily;
                 } else {
                     cor_y = tmp_hasily;
                 }
@@ -59,8 +55,6 @@ class gambar {
             hitungjumlahx++;
             if (potongx * hitungjumlahx >= cor_x) {
                 cor_x = potongx * hitungjumlahx;
-                //console.log('cor x saat ini >> ' + cor_x);
-                //cor_x = cor_xx + potongx;
             } else {
                 cor_x = cor_x + potongx;
             }
@@ -86,7 +80,6 @@ class gambar {
 
 
 function lurus(plx, ply, gambarr, potx, poty, r) {
-    //ambil();
     let hasill = gambarr.hitung(potx, poty, plx, ply, 0, 0, '#000000', 0, false, r);
     let hasill_2 = [0, 0, 0, 0, 0, 0];
     let hasill_3 = [0, 0, 0, 0, 0, 0];
@@ -94,24 +87,24 @@ function lurus(plx, ply, gambarr, potx, poty, r) {
         var plxx = plx % potx;
         hasill_2 = gambarr.hitung(poty, potx, plxx, ply, hasill[1], 0, '#ff0000', hasill[3], true);
     }*/
-    if (ply - (hasill[5] * poty) >= potx && hasill[3] == 1) { //ply % poty >= potx
+    if (ply - (hasill[5] * poty) >= potx && hasill[3] == 1) { //ply % poty >= potx # Orange
         var plyy = ply % poty;
         var plxx = plx - (plx - (potx * (hasill[4])));
         console.log('hasil plxx ' + plxx);
         hasill_2 = gambarr.hitung(poty, potx, plxx, plyy, 0, hasill[2], '#ff8c00', hasill[3], true, r);
     }
-    if (ply - (hasill[5] * poty) >= potx && hasill[6] == false) { //ply % poty >= potx
+    if (ply - (hasill[5] * poty) >= potx && hasill[6] == false) { //ply % poty >= potx # Red
         var plyy = ply - (hasill[5] * poty);
         var plxx = plx - (plx - (potx * (hasill[4])));
-        hasill_2 = gambarr.hitung(poty, potx, plxx, plyy, 0, hasill[2], '#ff0000', hasill[3], true, r);
+        hasill_2 = gambarr.hitung(poty, potx, plxx, plyy, 0, hasill[2], '#ff0000', 3, true, r);
     }
-    if (hasill[3] == 1) {
+    if (hasill[3] == 1) { // # Green
         var plxx = plx - (potx * (hasill[4]));
         //var corxx = plx % hasill[2];
         console.log('plxx di hasill_4 ' + plxx)
         hasill_3 = gambarr.hitung(poty, potx, plxx, ply, hasill[1], 0, '#00ff00', 0, false, r);
     }
-    if (hasill[3] == 2) {
+    if (hasill[3] == 2) { // # Blue
         var plyy = ply - (hasill[1] + potx);
         //var corxx = plx % hasill[2];
         hasill_3 = gambarr.hitung(poty, potx, plx, plyy, 0, hasill[2], '#0000ff', 0, false, r);

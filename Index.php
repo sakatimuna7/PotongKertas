@@ -15,10 +15,10 @@
                 <table class="table table-striped">
                     <tbody>
                         <tr>
-                            <th scope="row">Ukuran Potong </th>
-                            <td><input type="text" id="nilaix" onkeypress="jikaenter(this,event)" /></td>
+                            <th scope="row">Ukuran plano</th>
+                            <td><input type="text" id="planox" onkeypress="jikaenter(this,event)" /></td>
                             <td>x</td>
-                            <td><input type="text" id="nilaiy" onkeypress="jikaenter(this,event)" /></td>
+                            <td><input type="text" id="planoy" onkeypress="jikaenter(this,event)" /></td>
                         </tr>
                     </tbody>
                 </table>
@@ -27,10 +27,10 @@
                 <table class="table table-striped">
                     <tbody>
                         <tr>
-                            <th scope="row">Ukuran plano</th>
-                            <td><input type="text" id="planox" onkeypress="jikaenter(this,event)" /></td>
+                            <th scope="row">Ukuran Potong </th>
+                            <td><input type="text" id="nilaix" onkeypress="jikaenter(this,event)" /></td>
                             <td>x</td>
-                            <td><input type="text" id="planoy" onkeypress="jikaenter(this,event)" /></td>
+                            <td><input type="text" id="nilaiy" onkeypress="jikaenter(this,event)" /></td>
                         </tr>
                     </tbody>
                 </table>
