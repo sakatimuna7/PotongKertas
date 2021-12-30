@@ -1,4 +1,14 @@
 # PotongKertas
 alat untuk menghitung potongan kertas plano
 
-Masih Banyak Kekurangan di beberapa hal
+Fix Bug Visual Canvas
+
+Next Fitur :
+- Desain UI
+- calculating needs paper
+  > Launch Box
+  > Calenders
+  > Books
+  > Paperbag
+  > dll
+- Dll
