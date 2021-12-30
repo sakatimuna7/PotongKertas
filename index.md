@@ -3,7 +3,15 @@
 You can use the [editor on GitHub](https://github.com/sakatimuna7/PotongKertas/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<html>
+
+<head>
+    <title>Artikel 1</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
 <body>
+
     <div class="container">
         <h1 align="center">belajar berhitung plano percetakan</h1>
         <h3>Membuat Perhitungan Plano </h3>
@@ -70,3 +78,5 @@ Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://j
 
         </script>
 </body>
+
+</html>
